@@ -1,0 +1,22 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+<Dialog title="Create Material">
+    <f:SimpleForm>
+        <f:content>
+            <Label text="Material Name"/>
+            <Input value="{}"/>
+            <Label text="Product Description"/>
+            <Input value="{}"/>
+            <Label text="Unit Of Measure"/>
+            <Input value="{}"/>
+            <Label text="Current Stock"/>
+            <Input value="{}"/>
+        </f:content>
+    </f:SimpleForm>
+    <beginButton>
+        <Button text="Save" press="onSave"/>
+    </beginButton>
+    <endButton>
+    <Button text="Cancel" press="onCancel"/>
+    </endButton>
+</Dialog>
+</core:FragmentDefinition>

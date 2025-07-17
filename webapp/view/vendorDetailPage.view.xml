@@ -1,0 +1,29 @@
+<mvc:View controllerName="de.assessment.controller.vendorDetailPage"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form">
+    <Page id="vendordetail" title="Vendor Detail Page" showNavButton="true" navButtonPress="onNavigationBack">
+    <Toolbar>
+            <content>
+            <ToolbarSpacer/>
+            <SearchField width="20%"  liveChange="onSearch"/>
+            </content>
+         </Toolbar>
+  <List
+        id="idList" mode="SingleSelectLeft"
+        items="{
+            path: 'vendorDetailModel>/'
+        }" >
+        <StandardListItem
+           
+            title="{vendorDetailModel>vendorId}"
+            description="{vendorDetailModel>vendorName}"
+            highlight="Success"
+            info="{vendorDetailModel>contactPerson}"
+            infoState= "Success"
+            infoStateInverted="true"
+            highlightText="{vendorDetailModel>email}"/>
+    </List>
+    </Page>
+</mvc:View>
+ 

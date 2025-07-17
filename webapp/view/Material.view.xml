@@ -1,0 +1,63 @@
+<mvc:View controllerName="de.assessment.controller.Material"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}" >
+    <Table id="materialId" items="{material>/}"  mode="SingleSelectLeft">
+    <headerToolbar>
+         <Toolbar>
+            <content>
+            <Title text="Material Table"/>
+            <ToolbarSpacer/>
+               <!-- <Button icon="sap-icon://add" press="onAddPress"/> -->
+            </content>
+         </Toolbar>
+      </headerToolbar>
+    <columns>
+    <Column width="10rem">
+        <Text text="Material Id"/>
+     </Column>
+     <Column>
+        <Text text="Material Name"/>
+     </Column>
+     <Column>
+        <Text text="Material Type"/>
+     </Column>
+     
+      <Column>
+        <Text text="Minimum Stock Level"/>
+     </Column>
+     <Column>
+        <Text text="current Stock"/>
+     </Column>
+      <!-- <Column>
+        <Text text="Delete"/>
+     </Column> -->
+    </columns>
+    <items>
+        <ColumnListItem type="Navigation" press="onNavPress">
+        <cells>
+        <Text text="{material>materialId}"/>
+        <Text text="{material>materialName}"/>
+        <Text text="{material>description}"/>    
+            <Text text="{material>unitOfMeasure}"/>      
+         <ObjectStatus text="{material>currentStock}" state="{=${material>currentStock} >= '500' ? 'Success' : 'Error'}"/>
+          <!-- <Button  icon="sap-icon://delete" press="onDeleteProductPress"/> -->
+        </cells>
+        </ColumnListItem>
+    </items>
+    </Table>
+    <!-- <Toolbar>
+            <content>
+            <Title text="Employee Details"/>
+            </content>
+         </Toolbar>
+     <List id="EmployeeId"  
+      items="{ path: 'vendor>/vendors' }" >
+        <StandardListItem
+            title="{vendor>vendor_name}"
+            description="{vendor>material_type}"/>
+              
+           
+    </List> -->
+    </Page>
+</mvc:View>
